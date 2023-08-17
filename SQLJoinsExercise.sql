@@ -40,6 +40,22 @@ INNER JOIN Reviews as r
 ON p.ProductID = r.ProductID
 WHERE p.name like "%Visio TV%";
 
+/* Your goal is to write a query that serves as an employee sales report.
+This query should return:
+-  the employeeID
+-  the employee's first and last name
+-  the name of each product
+-  and how many of that product they sold */
+SELECT e.EmployeeID, e.FirstName, e.LastName, p.Name, s.Quantity From Employees as e
+Inner Join Sales as s
+On e.EmployeeID = s.EmployeeID
+Inner Join Products as p
+On s.ProductID = p.ProductID;
+
+
+
+
+
 
 
 
