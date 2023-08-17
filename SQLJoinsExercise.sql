@@ -34,11 +34,15 @@ Where c.name in ("Appliances", "Games");
  Order BY Total_number_Sold DESC;
 
 /* joins: find Product name, reviewer name, rating, and comment on the Visio TV. (only return for the lowest rating!) */
-SELECT p.Name as Product_Name, r.Reviewer, r.Rating as Lowest_Rating, r.Comment as Reviewer_Comment
+SELECT p.Name as Product_Name, r.Reviewer, Min(r.Rating) as Lowest_Rating, r.Comment as Reviewer_Comment
 FROM Products as p
 INNER JOIN Reviews as r
 ON p.ProductID = r.ProductID
-WHERE p.name like "%Visio TV%" AND r.rating = 1;
+WHERE p.name like "%Visio TV%";
+
+
+
+
 
 
 
