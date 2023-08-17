@@ -46,7 +46,7 @@ This query should return:
 -  the employee's first and last name
 -  the name of each product
 -  and how many of that product they sold */
-SELECT e.EmployeeID, e.FirstName, e.LastName, p.Name, s.Quantity From Employees as e
+SELECT e.EmployeeID, e.FirstName, e.LastName, p.Name as Product_Name, s.Quantity as Amount_Sold_By_Employee From Employees as e
 Inner Join Sales as s
 On e.EmployeeID = s.EmployeeID
 Inner Join Products as p
