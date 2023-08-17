@@ -26,13 +26,13 @@ ON d.DepartmentID = c.DepartmentID
 Where c.name in ("Appliances", "Games");
 /* joins: find the product name, total # sold, and total price sold,
  for Eagles: Hotel California --You may need to use SUM() */
- SELECT p.Name as Product_Name, Sum(s.Quantity) as Total_number_Sold,  Sum(s.PricePerUnit) as Total_price_sold
+ SELECT p.Name as Product_Name, Sum(s.Quantity) as Total_NUmber_Sold, Sum(s.Quantity) * p.Price as Total_price_sold
  FROM Products as p
  INNER JOIN Sales as s
  ON p.ProductID = s.ProductID
- Group BY p.ProductID
- Order BY Total_number_Sold DESC;
+ Where p.Name Like "%Hotel California%";
 
+Select *  from sales;
 /* joins: find Product name, reviewer name, rating, and comment on the Visio TV. (only return for the lowest rating!) */
 SELECT p.Name as Product_Name, r.Reviewer, Min(r.Rating) as Lowest_Rating, r.Comment as Reviewer_Comment
 FROM Products as p
